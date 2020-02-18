@@ -26,6 +26,7 @@ namespace SalesProject.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Lista = _sellerService.DepartmentList();
             return View();
         }
         [HttpPost]
@@ -35,6 +36,6 @@ namespace SalesProject.Controllers
             _sellerService.Insert(seller);
 
             return RedirectToAction(nameof(Index));
-        }
+        }       
     }
 }

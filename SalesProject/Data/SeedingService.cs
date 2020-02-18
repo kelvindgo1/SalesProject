@@ -9,7 +9,7 @@ namespace SalesProject.Data
 {
     public class SeedingService
     {
-        private SalesProjectContext _context;
+        readonly SalesProjectContext _context;
 
         public SeedingService(SalesProjectContext context)
         {

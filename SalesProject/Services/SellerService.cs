@@ -16,6 +16,11 @@ namespace SalesProject.Services
             _context = context;
         }
 
+        public List<Department> DepartmentList()
+        {
+            return _context.Department.ToList();
+        }
+
         public List<Seller> FindAll()
         {
             return _context.Seller.ToList();
@@ -23,6 +28,7 @@ namespace SalesProject.Services
 
         public void Insert(Seller obj)
         {
+            obj.Department = _context.Department.First();
             _context.Add(obj);
             _context.SaveChanges();
         }
