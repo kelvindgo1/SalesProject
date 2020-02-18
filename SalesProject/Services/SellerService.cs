@@ -3,7 +3,6 @@ using SalesProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalesProject.Services
 {
@@ -27,8 +26,7 @@ namespace SalesProject.Services
         }
 
         public void Insert(Seller obj)
-        {
-            obj.Department = _context.Department.First();
+        {         
             _context.Add(obj);
             _context.SaveChanges();
         }
